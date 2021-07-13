@@ -1,5 +1,5 @@
+// import PropTypes from 'prop-types';
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Filter.module.css';
 import { connect } from 'react-redux';
 import contactActions from '../../redux/phonebook/phonebook-action';
@@ -17,11 +17,10 @@ const Filter = ({ value, onChange }) => {
     </label>
   );
 };
-
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+// Filter.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
 
 const mapStateToProps = state => ({
   value: state.contacts.filter,

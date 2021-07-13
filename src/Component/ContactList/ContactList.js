@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import contactActions from '../../redux/phonebook/phonebook-action';
-import PropTypes from 'prop-types';
 import ElementContactList from '../ElementContactList/ElementContactList';
 import styles from './ContactList.module.css';
 
@@ -26,15 +25,10 @@ const ContactList = ({ contacts, onClick }) => {
   );
 };
 
-ContactList.propTypes = {
-  shownContacts: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
-
-const getVisibleContacts = (allcontacts, filter) => {
+const getVisibleContacts = (contacts, filter) => {
   const normalizedFilter = filter.toLowerCase();
 
-  return allcontacts.filter(contact =>
+  return contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter),
   );
 };
