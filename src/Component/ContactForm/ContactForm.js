@@ -37,14 +37,14 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, number } = this.state;
-    this.props.onSubmit(name, number);
-    this.reset();
-    // if (name !== '' && number !== '') {
-    //   this.props.onSubmit(name, number);
-    //   this.reset();
-    //   return;
-    // }
-    // alert('Please fill empty fields');
+    // this.props.onSubmit(name, number);
+    // this.reset();
+    if (name !== '' && number !== '') {
+      this.props.onSubmit(name, number);
+      this.reset();
+      return;
+    }
+    alert('Please fill empty fields');
   };
 
   reset = () => {
